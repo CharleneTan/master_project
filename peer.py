@@ -850,9 +850,9 @@ def recieve_new_prev_hash_block(peer,txs):
     utxo_set,pool = peer.utxo_set,peer.mem_pool
     allow_utxo_from_pool = peer.allow_utxo_from_pool
     peer._utxos_from_vins = remove_spent_utxo_from_txs(utxo_set,txs)
-    peer._pointers_from_vouts,peer._utxos_from_vouts = confirm_utxos_from_txs(
-            utxo_set,txs,allow_utxo_from_pool
-            )
+    # peer._pointers_from_vouts,peer._utxos_from_vouts = confirm_utxos_from_txs(
+    #         utxo_set,txs,allow_utxo_from_pool
+    #         )
     peer._txs_removed = remove_txs_from_pool(pool,txs)
     
     

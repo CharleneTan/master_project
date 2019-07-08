@@ -136,7 +136,8 @@ class Network(object):
         
             
     def make_random_transactions(self):
-        k = random.randint(1,self.nop)
+        # k = random.randint(1,self.nop)
+        k = random.randint(1, 200)
         self._not = k
         for _ in range(k):
             sender = random.choice(self.peers[1:])
@@ -147,8 +148,6 @@ class Network(object):
                                       tx_random_value_for_sender(sender))
             
             sender.broadcast_transaction()
-            
-
 
     def set_consensus_peers(self,*idx):
         for i in idx:
@@ -208,7 +207,6 @@ class Network(object):
         j = json.dumps(d)
         input_tuple = j
         db.query(sql, input_tuple)
-
 
         # store other transactions
         re = []

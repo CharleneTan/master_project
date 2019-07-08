@@ -18,6 +18,10 @@ class SQL:
         self.cursor.executemany(sql,arg)
         return self.cursor.fetchone()
 
+    def select(self, sql):
+        self.cursor.execute(sql)
+        return self.cursor.fetchall()
+
     def commit(self):
         self.db.commit()
 
